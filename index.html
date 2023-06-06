@@ -1,0 +1,89 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"> -->
+</head>
+<style>
+     *{
+        margin: 0;
+        padding: 0;
+        background-color: black;
+        color: white;
+    }
+    .container{
+        position: relative;
+    }
+   
+.zero{
+  font-size: 100px;
+  padding: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.plus{
+    font-size: 90px;border: none;
+    position: absolute;
+    left: 30%;
+    
+}
+ .minus{
+    font-size: 120px;
+    border: none;
+    position: absolute;
+    right: 35%;
+    top: 90%;
+
+ } 
+ .reset{
+  position: absolute;
+  left: 45%;
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 20px;
+  background-color: rgb(255, 246, 246);
+  color: black;
+  border-radius: 10px;
+ }
+ 
+
+</style>
+ <body>
+    <div class="container">
+<label class="zero" id="label">0</label>
+<button class="plus" id="add-btn" onclick="adding()">+</button>
+<div class="reset-box" id="popUp">
+  <button class="reset" id="reset" onclick="resetButton()">reset </button>
+</div>
+<button class="minus" id="sub-btn" onclick="subtract()">-</button>
+</div>    
+</body>
+<script>
+
+var count = 0
+function adding(){
+    document.getElementById("add-btn")
+    count+=1
+    document.getElementById("label").innerHTML = count
+}
+function subtract(){
+    document.getElementById("sub-btn")
+    count-=1
+    document.getElementById("label").innerHTML = count
+}
+var value= document.getElementById("label")
+function resetButton(){
+  count = 0;
+  value.innerHTML = count;
+}
+
+// function toggle1(){
+//   document.getElementById("popUp").classList.toggle("active");
+// }
+
+</script>
+</html> 
